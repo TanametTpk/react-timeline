@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Timeline, { TimeEvent } from './components/Timeline'
 
 function App() {
+
+  const events: TimeEvent[] = [
+    {
+      backgroundColor: "red",
+      date: "31/5/20",
+      content: <div>
+        now
+      </div>
+    },
+    {
+      backgroundColor: "red",
+      date: "12/12/12",
+      content: <div>
+        hello
+      </div>
+    },
+    {
+      backgroundColor: "green",
+      date: "12/11/12",
+      content: <div>
+        start
+      </div>
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{backgroundColor:"#f6f7f9"}}>
+      <Timeline events={events} />
     </div>
   );
 }
